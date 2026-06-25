@@ -1,0 +1,52 @@
+id: aotc
+name: American Opportunity Tax Credit
+category: education
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Federal tax credit for qualified tuition, fees, and course materials
+  paid during a student's first four years of postsecondary education.
+  It is worth up to 2,500 dollars per eligible student each year, and up
+  to 1,000 dollars of that is refundable even when no tax is owed. The
+  credit is claimed on the federal tax return using Form 8863.
+income:
+  type: fixed_by_filing_status
+  amounts:
+    mfj: 180000
+    hoh: 90000
+    single: 90000
+borderline_margin_pct: 0
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      student: college
+    describe: at least one college student in the household
+value:
+  type: per_member
+  amount: 2500
+  member_filter:
+    student: college
+  note: Up to 2500 dollars per eligible student and 40 percent is refundable.
+next_step: >
+  Claim the credit by filing Form 8863 with your federal tax return.
+  The school sends Form 1098-T showing tuition paid, so gather that
+  before you file.
+application_url: https://www.irs.gov/credits-deductions/individuals/aotc
+documents:
+  - Form 1098-T tuition statement from each student's school
+  - Receipts for required books, supplies, and course materials
+  - Social Security number or ITIN for each student claimed
+  - Records of scholarships and grants that reduced qualified expenses
+  - Prior year returns showing how many years the credit was already claimed
+source_url: https://www.irs.gov/credits-deductions/individuals/aotc
+last_verified: 2025-10-01
+notes: >
+  Credit rules are set for each tax year and can change with new
+  legislation, so check the IRS page for the current year before
+  filing. The credit phases out starting at 160,000 dollars of modified
+  AGI for joint filers and 80,000 dollars for others. It covers only
+  the first four years of postsecondary education, and the student must
+  be enrolled at least half time for one academic period in the year.
+  The same student's expenses cannot be claimed for both the AOTC and
+  the Lifetime Learning Credit in the same year.

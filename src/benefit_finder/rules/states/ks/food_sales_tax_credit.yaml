@@ -1,0 +1,57 @@
+id: ks_food_sales_tax_credit
+name: Kansas food sales tax credit
+category: tax_credit
+jurisdiction: state
+states: [KS]
+household_size_basis: tax
+description: >
+  Kansas income tax credit that offsets some of the sales tax paid on
+  groceries. It is available to lower income Kansas residents who are 55
+  or older, have a disability, or claim a dependent child under 18. The
+  credit is claimed on the Kansas individual income tax return and is
+  worth a fixed amount for each exemption on the return.
+income:
+  type: fixed
+  amount: 30615
+borderline_margin_pct: 0
+conditions:
+  - type: any_of
+    conditions:
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          age_min: 55
+        describe: a member aged 55 or older
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          disabled: true
+        describe: a member who is disabled
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          age_max: 17
+          relationship: [child, grandchild, foster_child]
+        describe: a dependent child under 18
+value:
+  type: per_member
+  amount: 125
+  note: 125 dollars per exemption claimed on the Kansas return, nonrefundable.
+next_step: >
+  Claim the credit when filing the Kansas K-40 individual income tax
+  return, either through tax software or the Kansas WebFile system.
+application_url: https://www.ksrevenue.gov/perstaxtypesfood.html
+documents:
+  - Completed federal tax return showing adjusted gross income
+  - Social Security numbers for everyone claimed on the Kansas return
+  - Proof of Kansas residency for the full tax year
+  - Documentation of disability if qualifying on that basis
+source_url: https://www.ksrevenue.gov/perstaxtypesfood.html
+last_verified: 2025-10-01
+notes: >
+  The income ceiling and credit amount can change with state legislation,
+  typically effective at the start of a new tax year. The credit is
+  claimed on the Kansas K-40 income tax return and is nonrefundable, so
+  it only offsets Kansas tax owed and pays nothing beyond that. The
+  statewide grocery sales tax rate reached zero in 2025, so the credit's
+  current status should be verified each filing season.

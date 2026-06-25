@@ -1,0 +1,42 @@
+id: ks_lieap
+name: Kansas LIEAP (energy assistance)
+category: utilities
+jurisdiction: state
+states: [KS]
+household_size_basis: all
+description: >
+  Kansas Low Income Energy Assistance Program, a once-a-year payment
+  that helps low income households with their winter heating costs.
+  The Department for Children and Families pays the benefit directly
+  to the household or its energy provider. Renters and homeowners can
+  both qualify as long as they pay for their own heat.
+income:
+  type: fpl_percent
+  limit_pct: 150
+  measure: gross_annual
+value:
+  type: range
+  min: 300
+  max: 1500
+  note: One annual benefit that varies with fuel type, household size, and income.
+next_step: >
+  Apply online through the DCF self-service portal during the
+  application period, or submit a paper application to a local DCF
+  service center.
+application_url: https://cssp.kees.ks.gov/apspssp/sspNonMed.portal
+documents:
+  - Photo ID for the adult applying
+  - Most recent heating bill showing the account holder name and address
+  - Proof of income for the last month for all adult household members
+  - Receipts or account history showing recent payments toward the energy bill
+  - Social Security numbers for household members
+source_url: https://www.dcf.ks.gov/services/ees/Pages/EnergyAssistance.aspx
+last_verified: 2025-10-01
+notes: >
+  Income limits track the Federal Poverty Level and change each year
+  when the new guidelines come out. The application window is short and
+  usually runs from mid January through the end of March, so a household
+  screened outside that window must wait for the next season. An adult
+  member of the household must be personally responsible for the heating
+  costs, and a recent history of payments toward the energy bill is
+  required.

@@ -1,0 +1,57 @@
+id: ks_medicaid_chip_children
+name: KanCare Medicaid / CHIP for children
+category: health
+jurisdiction: state
+states: [KS]
+household_size_basis: tax
+description: >
+  KanCare is the Kansas program that delivers Medicaid and the
+  Children's Health Insurance Program through managed care plans.
+  Children age 18 or younger can get comprehensive coverage, including
+  doctor visits, hospital care, prescriptions, dental, and vision, even
+  when their parents earn too much to qualify themselves. Lower-income
+  children are covered by Medicaid at no cost, while CHIP covers
+  children in families with somewhat higher incomes for a small monthly
+  premium.
+income:
+  type: fpl_percent
+  limit_pct: 250
+  measure: gross_annual
+skip_if_already_enrolled: receives_medicaid
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      age_max: 18
+    describe: at least one child age 18 or younger
+value:
+  type: per_member
+  amount: 3000
+  member_filter:
+    age_max: 18
+  note: >
+    Full health coverage for each child, which would cost thousands of
+    dollars per year to buy privately. CHIP charges small monthly
+    premiums at higher incomes.
+next_step: >
+  Apply online through the KEES medical self-service portal, or call
+  the KanCare Clearinghouse for a paper application. One application
+  screens the children for both Medicaid and CHIP.
+application_url: https://cssp.kees.ks.gov/apspssp/ssmedical.portal
+documents:
+  - Proof of income for the last 30 days (pay stubs or employer letter)
+  - Social Security numbers or immigration documents for the children
+  - Proof of Kansas residency (lease, utility bill, or Kansas ID)
+  - Birth dates and identity documents for each child applying
+  - Information about any current health insurance for the household
+source_url: https://www.kancare.ks.gov/
+last_verified: 2025-10-01
+notes: >
+  Income limits are tied to the Federal Poverty Level and shift each
+  year when the federal poverty guidelines update, typically in the
+  spring. Kansas has not expanded Medicaid, so nondisabled adults
+  qualify only at very low incomes, around 38 percent of FPL, while
+  pregnant women qualify up to roughly 171 percent. Children's
+  Medicaid tiers sit below the CHIP ceiling used here, so lower-income
+  children get Medicaid with no premium. The exact CHIP income ceiling
+  should be verified with KanCare before relying on this screen.

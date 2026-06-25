@@ -1,0 +1,51 @@
+id: savers_credit
+name: "Saver's Credit (retirement contributions)"
+category: tax_credit
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Federal tax credit that pays back part of what a worker puts into a
+  retirement account, claimed on Form 8880 with the tax return. The
+  credit covers 50%, 20%, or 10% of up to $2,000 in contributions per
+  person depending on income, so it can be worth up to $1,000 per filer.
+  It rewards money the household saves itself rather than paying a
+  benefit directly.
+income:
+  type: fixed_by_filing_status
+  amounts:
+    mfj: 79000
+    hoh: 59250
+    single: 39500
+borderline_margin_pct: 0
+verdict_cap: borderline
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      age_min: 18
+      employed: true
+      student: none
+    describe: at least one working non-student adult who could contribute
+value:
+  type: builtin
+  name: savers_credit
+next_step: >
+  Contribute to a 401k, IRA, or ABLE account, then file a federal tax
+  return with Form 8880 attached. IRA contributions for a tax year can
+  still be made up to the April filing deadline.
+application_url: https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit
+documents:
+  - W-2 forms showing workplace retirement plan contributions in box 12
+  - Year-end statements for IRA or ABLE account contributions
+  - Records of any retirement account distributions from the last three years, since these reduce the credit
+  - Social Security numbers for everyone on the return
+source_url: https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit
+last_verified: 2025-10-01
+notes: >
+  The credit only applies if the household actually contributes to a
+  401k, IRA, or ABLE account, which this screen cannot confirm. It is
+  nonrefundable, so it can only offset tax owed. Full-time students and
+  anyone claimed as a dependent are ineligible. Income limits shown are
+  for tax year 2025 and adjust for inflation each January. Starting in
+  2027 the credit is replaced by the federal Saver's Match, which is
+  paid into the retirement account instead.

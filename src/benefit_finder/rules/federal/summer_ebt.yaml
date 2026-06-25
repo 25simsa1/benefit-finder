@@ -1,0 +1,51 @@
+id: summer_ebt
+name: Summer EBT (SUN Bucks)
+category: food
+jurisdiction: federal
+household_size_basis: all
+description: >
+  Federal summer grocery benefit for families with school-age children,
+  launched nationwide in 2024 as SUN Bucks. Each eligible child receives
+  a one-time summer benefit loaded onto an EBT card to help cover food
+  costs while school meals are out of session. States run the program
+  and issue the benefits, and eligibility broadly follows the free and
+  reduced-price school meal rules.
+income:
+  type: fpl_percent
+  limit_pct: 185
+  measure: gross_annual
+categorical_flags:
+  - receives_snap
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      age_min: 5
+      age_max: 17
+    describe: at least one school-age child aged 5 to 17
+value:
+  type: per_member
+  amount: 120
+  member_filter:
+    age_min: 5
+    age_max: 17
+  note: 40 dollars per summer month for three months per eligible child
+next_step: >
+  Check whether your child is enrolled automatically, then apply through
+  your state Summer EBT agency before the summer deadline if not.
+application_url: https://www.fns.usda.gov/summer/sunbucks
+documents:
+  - Proof of household income (recent pay stubs or a benefits award letter)
+  - Each child's name, date of birth, and school enrollment information
+  - Photo ID for the parent or guardian applying
+  - Current mailing address for delivery of the EBT card
+source_url: https://www.fns.usda.gov/summer/sunbucks
+last_verified: 2025-10-01
+notes: >
+  The 185% FPL limit tracks the school meal income guidelines, which
+  update every July. States opt in each year, so verify that Kansas is
+  participating for the current summer. Children already on SNAP or
+  free or reduced-price school meals are usually enrolled automatically
+  and do not need to apply. Medicaid enrollment also certifies a child
+  automatically, but only when household income is at or below 185% of
+  FPL, so it is not an unconditional shortcut.

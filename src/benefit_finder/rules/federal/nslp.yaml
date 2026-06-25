@@ -1,0 +1,49 @@
+id: nslp
+name: Free and reduced-price school meals (NSLP)
+category: food
+jurisdiction: federal
+household_size_basis: all
+description: >
+  The National School Lunch Program provides free or reduced-price
+  lunches, and usually breakfasts, to K-12 students at participating
+  schools. Households apply through the school or district, which
+  checks family income against federal guidelines. Children in
+  households that receive SNAP are certified automatically without a
+  separate income review.
+income:
+  type: fpl_percent
+  limit_pct: 185
+  measure: gross_annual
+categorical_flags: [receives_snap]
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      student: k12
+    describe: at least one K-12 student
+value:
+  type: per_member
+  amount: 800
+  member_filter:
+    student: k12
+  note: >
+    Free breakfast plus lunch is worth roughly 800 to 1300 dollars per
+    child per school year.
+next_step: >
+  Fill out the household meal application from your child's school or
+  district, usually available online at the start of the school year.
+  One application covers all children in the household.
+application_url: https://www.fns.usda.gov/nslp
+documents:
+  - Names of all household members
+  - Income amount and frequency for each household member (pay stubs help)
+  - SNAP or TANF case number if the household receives those benefits
+  - Last four digits of the Social Security number of the adult signing
+source_url: https://www.fns.usda.gov/nslp
+last_verified: 2025-10-01
+notes: >
+  Meals are free at or below 130% of the Federal Poverty Level and
+  reduced price up to 185%. Households that receive SNAP are directly
+  certified for free meals and can skip the income application. Income
+  guidelines update every school year in July, and some districts serve
+  free meals to all students regardless of income.

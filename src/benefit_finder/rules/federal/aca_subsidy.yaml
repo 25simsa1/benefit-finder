@@ -1,0 +1,47 @@
+id: aca_subsidy
+name: ACA marketplace premium subsidies
+category: health
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Premium tax credits that lower the monthly cost of private health
+  insurance bought through the ACA marketplace at HealthCare.gov. The
+  credit is paid directly to the insurer each month and is reconciled on
+  the federal tax return. Households with income between 100% and 400%
+  of the Federal Poverty Level generally qualify if they lack access to
+  other affordable coverage such as Medicaid or an employer plan.
+income:
+  type: fpl_percent
+  limit_pct: 400
+  min_pct: 100
+value:
+  type: range
+  min: 4000
+  max: 18000
+  note: >
+    Premium tax credits scale with income and family size, and family
+    coverage is often worth thousands per year.
+next_step: >
+  Create an account at HealthCare.gov and compare plans during open
+  enrollment, which runs November 1 to January 15. Outside that window
+  a special enrollment period opens after qualifying life events such
+  as losing other coverage, moving, marriage, or a new child.
+application_url: https://www.healthcare.gov/
+documents:
+  - Social Security numbers for everyone applying
+  - Estimate of expected household income for the coverage year (recent pay stubs or last tax return)
+  - Employer coverage information if anyone is offered a job-based plan
+  - Immigration documents for applicants who are not U.S. citizens
+  - Current policy numbers for any existing health coverage
+source_url: https://www.healthcare.gov/lower-costs/
+last_verified: 2025-11-01
+notes: >
+  Income limits track the Federal Poverty Level guidelines, which update
+  each January, and the marketplace applies the prior year's guidelines
+  to the coverage year. The enhanced subsidies enacted for 2021 through
+  2025 were scheduled to expire after 2025, so verify the rules for the
+  current plan year before relying on an estimate. In states that
+  expanded Medicaid, people under 138% of FPL get Medicaid instead of a
+  marketplace subsidy. Kansas has not expanded Medicaid, so adults below
+  100% of FPL there can fall into the coverage gap and qualify for
+  neither program.

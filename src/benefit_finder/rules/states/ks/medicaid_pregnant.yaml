@@ -1,0 +1,47 @@
+id: ks_medicaid_pregnant
+name: KanCare Medicaid for pregnancy
+category: health
+jurisdiction: state
+states: [KS]
+household_size_basis: tax
+description: >
+  Medicaid coverage for pregnant Kansans, covering prenatal care,
+  delivery, and postpartum care. Pregnancy raises the Medicaid income
+  limit far above the ordinary adult limit in Kansas, so many working
+  households qualify during a pregnancy even though the parents would
+  not otherwise. Coverage now continues for 12 months after the
+  pregnancy ends.
+income:
+  type: fpl_percent
+  limit_pct: 171
+  measure: gross_annual
+skip_if_already_enrolled: receives_medicaid
+conditions:
+  - type: flag
+    flag: pregnant_member
+    equals: true
+    describe: a household member is pregnant
+value:
+  type: range
+  min: 5000
+  max: 20000
+  note: Prenatal care plus delivery routinely costs five figures without coverage.
+next_step: >
+  Apply through the KEES medical self-service portal and ask about
+  presumptive eligibility, which can start coverage while the full
+  application is processed.
+application_url: https://cssp.kees.ks.gov/apspssp/ssmedical.portal
+documents:
+  - Proof of pregnancy or expected due date from a provider
+  - Proof of income for the last 30 days
+  - Photo ID and Social Security number
+  - Proof of Kansas residency such as a lease or utility bill
+source_url: https://www.kancare.ks.gov/
+last_verified: 2025-10-01
+notes: >
+  The 171% FPL pregnancy limit is Kansas specific and should be
+  verified with KanCare, since limits change when the federal poverty
+  guidelines update each January. The expected child counts toward
+  household size for this determination, which this screener does not
+  model, so the real limit is usually slightly more generous than the
+  math shown here.

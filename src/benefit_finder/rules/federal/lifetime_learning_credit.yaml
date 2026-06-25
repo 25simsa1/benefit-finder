@@ -1,0 +1,47 @@
+id: lifetime_learning_credit
+name: Lifetime Learning Credit
+category: education
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Federal tax credit for tuition and required fees paid for postsecondary
+  education, claimed on the federal tax return. It covers undergraduate,
+  graduate, and job skills courses, and the student does not need to be
+  pursuing a degree or enrolled at least half time. The credit is worth
+  20 percent of up to 10000 dollars of qualified expenses per return.
+income:
+  type: fixed_by_filing_status
+  amounts:
+    mfj: 180000
+    hoh: 90000
+    single: 90000
+borderline_margin_pct: 0
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      student: college
+    describe: at least one household member taking postsecondary courses
+value:
+  type: range
+  min: 0
+  max: 2000
+  note: 20 percent of up to 10000 dollars of tuition per return, nonrefundable.
+next_step: >
+  Get Form 1098-T from the school, then claim the credit by filing
+  Form 8863 with your federal tax return.
+application_url: https://www.irs.gov/credits-deductions/individuals/llc
+documents:
+  - Form 1098-T tuition statement from the school
+  - Receipts for tuition and required course fees
+  - Social Security or taxpayer ID number for the student
+  - Enrollment records showing the courses taken
+source_url: https://www.irs.gov/credits-deductions/individuals/llc
+last_verified: 2025-10-01
+notes: >
+  Income limits are set per tax year and can change, so check the IRS
+  page for the current figures before filing. There is no limit on the
+  number of years the credit can be claimed, and graduate and part-time
+  courses count. The credit is nonrefundable, and the same student
+  cannot be claimed for both this credit and the American Opportunity
+  Tax Credit in the same year.

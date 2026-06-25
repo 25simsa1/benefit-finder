@@ -1,0 +1,42 @@
+id: snap
+name: SNAP (food stamps)
+category: food
+jurisdiction: federal
+household_size_basis: snap
+description: >
+  Monthly grocery benefit loaded onto an EBT card, administered by each
+  state. The federal gross income test is 130% of the Federal Poverty
+  Level, and most households must also pass a net income test at 100%
+  of FPL after deductions. Kansas uses the standard federal tests and
+  does not use broad-based categorical eligibility.
+income:
+  type: fpl_percent
+  limit_pct: 130
+  measure: gross_annual
+borderline_margin_pct: 15
+confidence: screen
+skip_if_already_enrolled: receives_snap
+value:
+  type: builtin
+  name: snap
+next_step: >
+  Apply online through your state SNAP agency. In Kansas that is the
+  DCF self-service portal, with an interview by phone afterward.
+application_url: https://cssp.kees.ks.gov/apspssp/sspNonMed.portal
+documents:
+  - Photo ID for the person applying
+  - Proof of income for the last 30 days (pay stubs or employer letter)
+  - Rent or mortgage statement and utility bills
+  - Social Security numbers for household members
+source_url: https://www.fns.usda.gov/snap/recipient/eligibility
+last_verified: 2025-10-01
+notes: >
+  Gross and net limits change every October. Households with a member
+  aged 60 or older or disabled are exempt from the gross income test
+  and can qualify above the limit shown, subject to the net income
+  test. Because Kansas has no broad-based categorical eligibility, the
+  federal resource limit also applies (3,000 dollars, or 4,500 dollars
+  with an elderly or disabled member, FY2025). Students enrolled at
+  least half time in college face extra eligibility rules. The estimate
+  here ignores the excess shelter deduction, which often raises the
+  real benefit for renters with high housing costs.

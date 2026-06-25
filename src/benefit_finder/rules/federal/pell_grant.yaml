@@ -1,0 +1,46 @@
+id: pell_grant
+name: Pell Grant (flag only, FAFSA decides)
+category: education
+jurisdiction: federal
+household_size_basis: fafsa
+description: >
+  Federal need-based grant that helps undergraduates pay for college and
+  does not have to be repaid. The award amount depends on the Student Aid
+  Index from the FAFSA, the cost of attendance, and whether the student
+  attends full time or part time. It is the largest federal grant program
+  for undergraduate students.
+income:
+  type: fpl_percent
+  limit_pct: 275
+borderline_margin_pct: 20
+verdict_cap: likely
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      student: college
+    describe: at least one college student or student headed to college
+value:
+  type: range
+  min: 740
+  max: 7395
+  note: The maximum award for the 2025-26 award year is 7395 dollars.
+next_step: >
+  File the FAFSA at studentaid.gov for the upcoming award year. It is
+  free to file and the results determine the actual Pell amount.
+application_url: https://studentaid.gov/h/apply-for-aid/fafsa
+documents:
+  - StudentAid.gov account (FSA ID) for the student and one parent
+  - Social Security numbers for the student and contributing parents
+  - Federal tax return information or consent to the IRS data exchange
+  - Records of untaxed income and current savings or investment balances
+  - List of schools that should receive the FAFSA results
+source_url: https://studentaid.gov/understand-aid/types/grants/pell
+last_verified: 2025-10-01
+notes: >
+  This screener only flags plausible eligibility. The actual determination
+  comes from the FAFSA's Student Aid Index, not from an income cutoff.
+  Families under roughly 175 to 225 percent of poverty often receive the
+  maximum award. Award amounts and eligibility tables change every award
+  year, which begins July 1, so check the current figures before relying
+  on them. The FAFSA is free to file and no service should charge for it.

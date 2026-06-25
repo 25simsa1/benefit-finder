@@ -1,0 +1,40 @@
+id: eitc
+name: Earned Income Tax Credit (EITC)
+category: tax_credit
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Refundable federal tax credit for workers with low to moderate earned
+  income, claimed on the federal tax return. The credit phases in with
+  earnings, plateaus, then phases out, and grows substantially with the
+  number of qualifying children.
+income:
+  type: none
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      income_type: [w2, "1099"]
+    describe: at least one household member with earned income
+  - type: builtin_value_positive
+    name: eitc
+    describe: the credit formula must produce a positive amount at this income
+confidence: definitive
+value:
+  type: builtin
+  name: eitc
+next_step: >
+  File a federal tax return and claim the credit, even if no tax is
+  owed. Free filing help is available through VITA sites and IRS Free
+  File.
+application_url: https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit-eitc
+documents:
+  - Social Security cards for everyone on the return
+  - W-2 and 1099 forms for all jobs
+  - Proof that qualifying children lived with you (school or medical records)
+source_url: https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit-eitc
+last_verified: 2025-10-01
+notes: >
+  Parameters shown are for tax year 2025 and adjust with inflation each
+  year. Investment income above the annual cap disqualifies the credit.
+  Married filing separately generally cannot claim it.

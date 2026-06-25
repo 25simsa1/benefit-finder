@@ -1,0 +1,47 @@
+id: ctc_actc
+name: Child Tax Credit / Additional CTC
+category: tax_credit
+jurisdiction: federal
+household_size_basis: tax
+description: >
+  Federal tax credit for parents and guardians of children under 17,
+  claimed on the federal tax return. Part of the credit is refundable
+  through the Additional Child Tax Credit, so families can receive
+  money back even when they owe little or no income tax. The credit
+  amount phases out for higher earners.
+income:
+  type: none
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      age_max: 16
+      relationship: [child, grandchild, foster_child]
+    describe: at least one qualifying child under 17
+  - type: builtin_value_positive
+    name: ctc_actc
+    describe: the credit formula must produce a positive amount at this income
+confidence: definitive
+value:
+  type: builtin
+  name: ctc_actc
+next_step: >
+  File a federal tax return and claim the credit on Schedule 8812,
+  even if no tax is owed. Free preparation help is available through
+  VITA sites and IRS Free File.
+application_url: https://www.irs.gov/credits-deductions/individuals/child-tax-credit
+documents:
+  - Social Security cards for each qualifying child and everyone on the return
+  - Birth certificates or other proof of relationship to each child
+  - Proof the children lived with you over half the year (school or medical records)
+  - W-2 and 1099 forms for all income
+source_url: https://www.irs.gov/credits-deductions/individuals/child-tax-credit
+last_verified: 2025-10-01
+notes: >
+  For tax year 2025 the credit is 2,200 dollars per qualifying child,
+  with up to 1,700 dollars refundable through the Additional Child Tax
+  Credit. These amounts are indexed for inflation and typically change
+  each tax year. Each child must have a valid Social Security number
+  issued before the return due date. The credit begins to phase out at
+  400,000 dollars of income for joint filers and 200,000 dollars for
+  all other filers.

@@ -1,0 +1,40 @@
+id: lifeline
+name: Lifeline phone and internet discount
+category: communications
+jurisdiction: federal
+household_size_basis: all
+description: >
+  Federal program run by the FCC that lowers the monthly cost of phone
+  or internet service for low income households. Eligible households
+  get a discount applied directly to their bill by a participating
+  carrier. Households on tribal lands qualify for a larger discount.
+income:
+  type: fpl_percent
+  limit_pct: 135
+  measure: gross_annual
+categorical_flags: [receives_snap, receives_medicaid]
+confidence: screen
+value:
+  type: fixed
+  amount: 9.25
+  period: month
+  note: 9.25 dollars per month off broadband or bundled service (voice-only service gets 5.25 dollars), up to 34.25 dollars on tribal lands.
+next_step: >
+  Check eligibility and apply through the National Verifier at the
+  Lifeline support site, then pick a participating phone or internet
+  company to apply the discount.
+application_url: https://www.lifelinesupport.org/
+documents:
+  - Photo ID with date of birth for the applicant
+  - Proof of income such as recent pay stubs or last year's tax return
+  - Proof of program participation if qualifying through SNAP or Medicaid (benefit award letter)
+  - Proof of address such as a utility bill or lease
+source_url: https://www.fcc.gov/lifeline-consumers
+last_verified: 2025-10-01
+notes: >
+  The income limit tracks 135% of the Federal Poverty Guidelines, which
+  update each year, typically in January. Applications go through the
+  National Verifier, and enrollment must be recertified annually. Only
+  one Lifeline discount is allowed per household, covering either phone
+  or internet but not both. The separate Affordable Connectivity
+  Program ended in 2024, while Lifeline continues to operate.

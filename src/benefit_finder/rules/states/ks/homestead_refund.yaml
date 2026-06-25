@@ -1,0 +1,63 @@
+id: ks_homestead_refund
+name: Kansas Homestead property tax refund
+category: housing
+jurisdiction: state
+states: [KS]
+household_size_basis: all
+description: >
+  Annual refund of part of the property tax paid on a Kansas home,
+  administered by the Kansas Department of Revenue. Homeowners who own
+  and occupy their home and meet the age, disability, or dependent
+  child test can get back up to 700 dollars of the tax they paid. The
+  refund is claimed once a year on Form K-40H alongside the Kansas
+  income tax return.
+income:
+  type: fixed
+  amount: 42600
+conditions:
+  - type: housing_status
+    equals: own
+    describe: must own and occupy the home
+  - type: any_of
+    conditions:
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          age_min: 55
+        describe: owner aged 55 or older
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          disabled: true
+        describe: an owner who is blind or disabled
+      - type: min_members_matching
+        count: 1
+        member_filter:
+          age_max: 17
+          relationship: [child, grandchild, foster_child]
+        describe: a dependent child under 18 living in the home
+value:
+  type: range
+  min: 100
+  max: 700
+  note: >
+    Refund of up to 700 dollars. Homeowners 65 and older may do better
+    with the SAFESR alternative worth 75 percent of property tax.
+next_step: >
+  File Kansas Form K-40H with your Kansas income tax return, or file
+  it through the WebFile system on the Department of Revenue site.
+application_url: https://www.ksrevenue.gov/perstaxtypeshs.html
+documents:
+  - Property tax statement from the county treasurer for the claim year
+  - Proof of all household income, including Social Security benefit statements
+  - Proof of age or a disability determination letter, whichever applies
+  - Deed or other proof that you own and occupy the home
+source_url: https://www.ksrevenue.gov/perstaxtypeshs.html
+last_verified: 2025-10-01
+notes: >
+  Claimed by filing Kansas Form K-40H with the state return. Renters
+  have not been eligible since 2013. The income limit shown is for the
+  2024 claim year and changes annually. Seniors 65 and older with
+  household income under about 23700 dollars should compare the SAFESR
+  program, which refunds 75 percent of property tax and often pays
+  more, but only one of the two can be claimed.

@@ -1,0 +1,54 @@
+id: wic
+name: WIC (Women, Infants, and Children)
+category: food
+jurisdiction: federal
+household_size_basis: all
+description: >
+  Supplemental nutrition program for pregnant and postpartum women,
+  infants, and children under age five. Participants receive a monthly
+  food package of staples like milk, eggs, cereal, and produce, plus
+  nutrition education, breastfeeding support, and health care referrals.
+  Benefits are redeemed with an eWIC card at authorized stores and the
+  program is run by state agencies through local clinics.
+income:
+  type: fpl_percent
+  limit_pct: 185
+  measure: gross_annual
+categorical_flags:
+  - receives_snap
+  - receives_medicaid
+conditions_mode: any
+conditions:
+  - type: min_members_matching
+    count: 1
+    member_filter:
+      age_max: 4
+    describe: at least one child under age 5
+  - type: flag
+    flag: pregnant_member
+    equals: true
+    describe: a household member is pregnant or postpartum
+value:
+  type: range
+  min: 600
+  max: 2400
+  note: The food package is worth roughly 50 to 100 dollars per participant per month.
+next_step: >
+  Start at SignUpWIC.com to find your local WIC clinic, then call to
+  schedule a certification appointment for the eligible family members.
+application_url: https://www.signupwic.com/
+documents:
+  - Photo ID for the applicant and proof of identity for each child
+  - Proof of household income for the last 30 days, or proof of SNAP or Medicaid enrollment
+  - Proof of address such as a lease, utility bill, or piece of mail
+  - Immunization or medical records for infants and children, if available
+source_url: https://www.fns.usda.gov/wic/wic-eligibility-requirements
+last_verified: 2025-10-01
+notes: >
+  Income guidelines are set at 185% of the Federal Poverty Level and
+  update every July. Households already enrolled in SNAP or Medicaid are
+  automatically income eligible. Each applicant must also complete a
+  nutritional risk assessment at a WIC clinic, which nearly all
+  applicants pass. Children remain eligible until their fifth birthday
+  and postpartum eligibility lasts six to twelve months after the
+  pregnancy ends.
