@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benefit Finder</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Benefit Finder</h1>
+      <p class="tagline">See which public benefits and tax credits your household may qualify for.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <p id="disclaimer" class="banner banner-note" role="note"></p>
+    <p id="fpl-warning" class="banner banner-warn" role="alert" hidden></p>
+
+    <nav class="stepper" aria-label="Progress">
+      <button class="step" data-view="intake" aria-current="true">1. Profile</button>
+      <button class="step" data-view="dashboard" disabled>2. Results</button>
+      <button class="step" data-view="report" disabled>3. Report</button>
+    </nav>
+  </div>
+
+  <main class="wrap">
+    <section id="view-intake" class="view"></section>
+    <section id="view-dashboard" class="view" hidden></section>
+    <section id="view-report" class="view" hidden></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="privacy">
+        <strong>Privacy.</strong> Your profile stays in this browser. It is sent to the
+        local server only to compute results and is never stored, logged, or written to
+        disk there. Use <em>Export profile</em> to save it yourself.
+      </p>
+      <p id="footer-source" class="muted"></p>
+    </div>
+  </footer>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
