@@ -13,11 +13,13 @@ dependencies = ["PyYAML>=6.0"]
 
 [project.optional-dependencies]
 web = ["fastapi>=0.110", "uvicorn[standard]>=0.29"]
+package = ["fastapi>=0.110", "uvicorn[standard]>=0.29", "pyinstaller>=6.0"]
 dev = ["pytest>=8.0", "httpx>=0.27", "fastapi>=0.110", "uvicorn[standard]>=0.29"]
 
 [project.scripts]
 benefit-finder = "benefit_finder.cli:main"
 benefit-finder-web = "benefit_finder.web.__main__:main"
+benefit-finder-app = "benefit_finder.desktop:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
