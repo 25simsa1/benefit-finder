@@ -45,6 +45,24 @@ Windows build keeps a small console window that shows a "close this
 window to quit" message. First launch may show a SmartScreen prompt
 (More info → Run anyway) because the app is unsigned.
 
+### Building Windows without a Windows machine
+
+If you do not have a Windows machine, `.github/workflows/build-windows.yml`
+builds the Windows app on a GitHub-hosted Windows runner. Trigger it from
+the Actions tab (Run workflow), or with the CLI:
+
+```bash
+# build only, download from the run's artifacts
+gh workflow run build-windows.yml
+
+# build and attach the zip to an existing release
+gh workflow run build-windows.yml -f release_tag=v0.1.0
+```
+
+The result is `Benefit-Finder-windows.zip`, either as a workflow artifact
+or attached to the named release. Pushing a `v*` tag also runs it and
+attaches the build to that tag's release automatically.
+
 ## Notes
 
 - The build scripts create/use a local virtualenv and install the
