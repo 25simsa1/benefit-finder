@@ -1,0 +1,53 @@
+name: build-windows
+
+# Builds the Windows double-click app on a GitHub-hosted Windows runner,
+# because PyInstaller cannot cross-compile from macOS or Linux. The build
+# uploads the zip as a workflow artifact, and also attaches it to a
+# release when run for a tag (push a tag, or dispatch with a release_tag).
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Attach the build to this existing release tag (optional)"
+        required: false
+        default: ""
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install with the packaging extra
+        run: pip install -e ".[package]"
+
+      - name: Build the app
+        run: pyinstaller packaging/benefit_finder.spec --noconfirm
+
+      - name: Zip the app folder
+        shell: pwsh
+        run: Compress-Archive -Path "dist/Benefit Finder" -DestinationPath "dist/Benefit-Finder-windows.zip" -Force
+
+      - name: Upload as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Benefit-Finder-windows
+          path: dist/Benefit-Finder-windows.zip
+
+      - name: Attach to the release
+        if: github.ref_type == 'tag' || inputs.release_tag != ''
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          $tag = if ($env:INPUT_RELEASE_TAG) { $env:INPUT_RELEASE_TAG } else { "${{ github.ref_name }}" }
+          gh release upload $tag "dist/Benefit-Finder-windows.zip" --clobber
