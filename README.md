@@ -14,7 +14,19 @@ last-verified date.
 > output carries a source link so you can verify current limits before
 > relying on it.
 
-## Install
+## For non-technical users (double-click app)
+
+No Python, no terminal. Build the app once (see `docs/BUILD.md`), then
+send the resulting file to anyone. They double-click it and the tool
+opens in their web browser, running entirely on their own machine.
+
+- **Mac.** `bash packaging/build_mac.sh` produces `dist/Benefit Finder.app`
+  and a sendable `dist/Benefit Finder-mac.zip`. End-user instructions to
+  ship alongside it are in `docs/HOW-TO-OPEN.md`.
+- **Windows.** `packaging\build_windows.bat` (run on Windows) produces
+  `dist\Benefit Finder\Benefit Finder.exe`.
+
+## Install (developers)
 
 Requires Python 3.11+.
 
