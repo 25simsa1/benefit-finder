@@ -19,6 +19,8 @@ on:
 jobs:
   windows:
     runs-on: windows-latest
+    permissions:
+      contents: write  # needed so the token can attach the build to a release
     steps:
       - uses: actions/checkout@v4
 
